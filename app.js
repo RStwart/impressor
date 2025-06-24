@@ -8,14 +8,14 @@ const BASE_URL = 'https://backend.haretable.com.br'; // substitua pela sua URL r
 
 
 async function buscarPedidosParaImprimir() {
-  const id_empresa = 1;
+  const id_empresa = 2;
 
   try {
     const { data: pedidos } = await axios.get(`${BASE_URL}/pedidos-para-imprimir`, {
       params: { id_empresa }
     });
 
-    console.log(pedidos, 'historicos');
+    console.log(pedidos, 'Pedidos');
 
     // Agrupar por mesa
     const agrupadoPorMesa = pedidos.reduce((acc, pedido) => {
@@ -103,7 +103,7 @@ async function buscarDadosMesa(id_mesa) {
 
 
 async function buscarHistoricoParaImprimir() {
-  const id_empresa = 1; // Substitua por valor dinâmico se necessário
+  const id_empresa = 2; // Substitua por valor dinâmico se necessário
 
   try {
     const { data: historicos } = await axios.get(`${BASE_URL}/historico-para-imprimir`, {
